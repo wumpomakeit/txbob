@@ -1,15 +1,20 @@
-# Railway / Nixpacks config for txBOB
-# Forces Python provider (Railway defaults to Node because of root package.json)
+# Railway / Nixpacks configuration for txBOB
+# The repo root has package.json, so Railway auto-detects Node.js.
+# This config forces the Python provider and installs from backend/.
 
 providers = ["python"]
 
 [phases.setup]
+# Install Python 3.11 system-wide via Nix
 nixPkgs = ["python311"]
 
 [phases.install]
+# Install backend deps + the Python SDK (needed for txbob import)
 cmds = [
-    "pip install fastapi==0.115.0 'uvicorn[standard]==0.30.6' python-dotenv==1.0.1 requests==2.32.3"
+    "pip install -r requirements.txt",
+    "pip install -e sdk-python/"
 ]
 
 [start]
-cmd = "cd backend && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
+# Run uvicorn from the backend directory so that 'app' package is found.
+cmd = "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"

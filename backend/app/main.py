@@ -9,6 +9,13 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# ── Make the sibling sdk-python/ package importable ──────────────────────────
+# Must happen BEFORE the router imports, because sdk.py does `from txbob import TxLINE`
+_ROOT = Path(__file__).resolve().parent.parent.parent  # .../txbob
+_SDK_PATH = str(_ROOT / "sdk-python")
+if _SDK_PATH not in sys.path:
+    sys.path.insert(0, _SDK_PATH)
+
 from app.routes import fixtures, odds, predictions
 from app.database import init_db
 from app.scheduler import start as start_scheduler, stop as stop_scheduler
@@ -34,11 +41,6 @@ async def lifespan(app: FastAPI):
     _load_env()
     init_db()
     start_scheduler()  # start background resolver agent
-    # Add the sibling sdk-python directory to sys.path so we can import txbob
-    root_dir = Path(__file__).resolve().parent.parent.parent  # .../txbob
-    sdk_path = str(root_dir / "sdk-python")
-    if sdk_path not in sys.path:
-        sys.path.insert(0, sdk_path)
     yield
     stop_scheduler()
 
