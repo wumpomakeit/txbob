@@ -1,0 +1,15 @@
+# Railway / Nixpacks config for txBOB
+# Forces Python provider (Railway defaults to Node because of root package.json)
+
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = [
+    "pip install fastapi==0.115.0 'uvicorn[standard]==0.30.6' python-dotenv==1.0.1 requests==2.32.3"
+]
+
+[start]
+cmd = "cd backend && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
