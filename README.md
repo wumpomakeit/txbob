@@ -12,8 +12,8 @@
 
 txBOB combines two ideas from the OKX Agent Hackathon:
 
-- **Prediction Market (Ide #8)** — users can predict micro-events in real-time: who scores next, will there be a yellow card, total goals, and more. Every outcome is rendered as a standalone Yes/No card, Polymarket-style.
-- **Developer SDK (Ide #10)** — developers get a clean Python SDK to build their own prediction apps on top of the TxLINE oracle protocol.
+- **Prediction Market** — users can predict micro-events in real-time: who scores next, will there be a yellow card, total goals, and more. Every outcome is rendered as a standalone Yes/No card, Polymarket-style.
+- **Developer SDK** — developers get a clean Python SDK to build their own prediction apps on top of the TxLINE oracle protocol.
 
 All odds flow from the **TxLINE real-time sports oracle** and are transformed into implied probabilities — no raw decimal odds anywhere in the UI.
 
@@ -23,13 +23,13 @@ All odds flow from the **TxLINE real-time sports oracle** and are transformed in
 
 | Feature | Description |
 |---------|-------------|
-| 🎯 **True prediction-market cards** | Every outcome is a standalone Yes/No question with probability % |
-| ⚡ **Real-time odds** | Streaming StablePrice feed from TxLINE oracle |
-| 🎮 **Micro-markets** | Goal Scorer, Yellow Card, Penalty, Added Time per match |
-| 🤖 **Autonomous resolver** | Background agent resolves predictions when matches finish |
-| 🔌 **Python SDK** | `pip install txbob` — subscribe, activate, place orders on-chain |
-| 👛 **Wallet connect** | Phantom, Backpack, Solflare — ready for on-chain settlement |
-| 📱 **Responsive UI** | Dark/red theme, glassmorphism cards, smooth animations |
+| **True prediction-market cards** | Every outcome is a standalone Yes/No question with probability % |
+| **Real-time odds** | Streaming StablePrice feed from TxLINE oracle |
+| **Micro-markets** | Goal Scorer, Yellow Card, Penalty, Added Time per match |
+| **Autonomous resolver** | Background agent resolves predictions when matches finish |
+| **Python SDK** | `pip install txbob` — subscribe, activate, place orders on-chain |
+| **Wallet connect** | Phantom, Backpack, Solflare — ready for on-chain settlement |
+| **Responsive UI** | Dark/red theme, glassmorphism cards, smooth animations |
 
 ---
 
@@ -230,5 +230,5 @@ MIT © 2026
 ---
 
 <p align="center">
-  Built with ❤️ for the OKX Agent Hackathon
+  txBOB is an autonomous prediction market for World Cup 2026, powered by TxLINE oracle on Solana.
 </p>
