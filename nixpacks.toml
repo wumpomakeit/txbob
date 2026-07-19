@@ -1,12 +1,15 @@
 # Railway / Nixpacks configuration for txBOB
-# Forces Python provider (repo root has package.json for frontend,
-# but the deployed service is the FastAPI backend).
+# Need both Python (backend) and Node (frontend build)
 
-providers = ["python"]
+providers = ["python", "node"]
+
+[phases.setup]
+nixPkgs = ["python311", "nodejs_22"]
 
 [phases.install]
+# Let Nixpacks auto-install from requirements.txt and package.json
+# Just add the SDK here
 cmds = [
-    "pip install -r requirements.txt",
     "pip install -e sdk-python/"
 ]
 
