@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e5e7eb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(239, 68, 68, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-hover {
+    @apply glass transition-all duration-300;
+  }
+  .glass-hover:hover {
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.08);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 7px rgba(239, 68, 68, 0.5), 0 0 20px rgba(239, 68, 68, 0.2);
+  }
+
+  .neon-border {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.1), inset 0 0 15px rgba(239, 68, 68, 0.03);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #ef4444 0%, #fbbf24 50%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-glow {
+    box-shadow: 0 0 80px rgba(239, 68, 68, 0.08), 0 0 160px rgba(239, 68, 68, 0.04);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-white text-center mb-4;
+  }
+  .section-subtitle {
+    @apply text-gray-400 text-center max-w-2xl mx-auto mb-12;
+  }
+}

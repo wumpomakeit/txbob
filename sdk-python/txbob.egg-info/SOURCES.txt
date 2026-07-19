@@ -1,0 +1,7 @@
+setup.py
+txbob/__init__.py
+txbob/client.py
+txbob.egg-info/PKG-INFO
+txbob.egg-info/SOURCES.txt
+txbob.egg-info/dependency_links.txt
+txbob.egg-info/top_level.txt

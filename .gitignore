@@ -1,0 +1,27 @@
+# Environment variables
+.env
+
+# Wallet files
+wallet-devnet.json
+
+# Node modules
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Build output
+dist/
