@@ -10,7 +10,7 @@
 
 ## What is txBOB?
 
-txBOB combines two ideas from the OKX Agent Hackathon:
+txBOB combines two ideas from the TxODDS World Cup Hackathon 2026:
 
 - **Prediction Market** — users can predict micro-events in real-time: who scores next, will there be a yellow card, total goals, and more. Every outcome is rendered as a standalone Yes/No card, Polymarket-style.
 - **Developer SDK** — developers get a clean Python SDK to build their own prediction apps on top of the TxLINE oracle protocol.
@@ -230,5 +230,5 @@ MIT © 2026
 ---
 
 <p align="center">
-  txBOB is an autonomous prediction market for World Cup 2026, powered by TxLINE oracle on Solana.
+  txBOB is an autonomous prediction market for World Cup 2026, powered by TxLINE, real-time sports data from txODDS, live on Solana.
 </p>
